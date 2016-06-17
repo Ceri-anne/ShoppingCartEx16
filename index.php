@@ -29,7 +29,7 @@ $view_vars = \Cart\App\add_item($cart);
 <h1>Shopping Cart</h1>
 
 <?php echo display('user', ['users' => $users, 'cart' => $cart]); ?>
-<?php echo display('item', ['new_item' => $new_item]); ?>
+<?php echo display('item', ['new_item' => $view_vars['new_item']]); ?>
 <?php echo display('items', ['cart' => $cart] + $view_vars); ?>
 
 <h1>All Users</h1>
