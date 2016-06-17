@@ -1,7 +1,6 @@
 <?php
 include 'cart_db.php';
 include 'cart_application.php';
-include 'cart_validate.php';
 
 const TEMPLATE_EXTENSION = '.phtml';
 const TEMPLATE_FOLDER = 'templates/';
