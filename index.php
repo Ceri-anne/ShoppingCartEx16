@@ -29,7 +29,8 @@ $view_vars = \Cart\App\add_item($cart);
 
 <?php echo display('user', ['users' => $users, 'cart' => $cart]); ?>
 <?php echo display('item', ['new_item' => $view_vars['new_item']]); ?>
-<?php echo display('items', ['cart' => $cart] + $view_vars); ?>
+<?php echo display('items',  ['cart' => 
+                \Cart\Db\transform_items($cart, $callback)]); ?>
 
 <h1>All Users</h1>
 <?php foreach($users as $username => $user) {

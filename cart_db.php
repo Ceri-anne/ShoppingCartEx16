@@ -87,3 +87,16 @@ function load_cart($dbname = DATABASE_NAME) {
 if(file_exists(DATABASE_NAME . DATABASE_EXTENSION)) {
 	$cart = load_cart();
 }
+
+
+function transform_items($cart,$callback){
+    
+    $cart['items'] = array_map($callback,$cart['items']);
+    return $cart;
+}
+
+
+$callback = function ($item) {
+	$item['name'] = strtolower($item['name']);
+	return $item;
+};
